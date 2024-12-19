@@ -47,6 +47,41 @@ function createLibrary(myLibrary) {
         createCard();
     }
 }
+function createForm() {
+    const bookForm = document.createElement("form");
+    const form = document.querySelector('.form');
+
+    form.appendChild(bookForm);
+
+    const titleInp = document.createElement('input');
+    titleInp.setAttribute("type", "text");
+    titleInp.setAttribute("placeholder", "Title")
+    titleInp.setAttribute("name", "title");
+    bookForm.appendChild(titleInp);
+
+    const authorInp = document.createElement('input');
+    authorInp.setAttribute("type", "text");
+    authorInp.setAttribute("placeholder", "Author")
+    authorInp.setAttribute("name", "author");
+    bookForm.appendChild(authorInp);
+
+    const pagesInp = document.createElement('input');
+    pagesInp.setAttribute("type", "number");
+    pagesInp.setAttribute("placeholder", "No. of Pages")
+    pagesInp.setAttribute("name", "pages");
+    bookForm.appendChild(pagesInp);
+
+    const readInp = document.createElement('input');
+    readInp.setAttribute("type", "text");
+    readInp.setAttribute("placeholder", "Read?")
+    readInp.setAttribute("name", "read");
+    bookForm.appendChild(readInp);
+
+}
+
+const newBookBtn = document.querySelector('.newButton');
+
+newBookBtn.addEventListener('click', createForm)
 
 
 addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, "Yes");
