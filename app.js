@@ -49,9 +49,9 @@ function createLibrary(myLibrary) {
 }
 
 
-addBookToLibrary('a', 'b', 3, false);
+addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, "Yes");
 
-addBookToLibrary('c', 'd', 4, true);
+addBookToLibrary('Homo Deus', 'Yuval Noah Harari', 786, "No");
 
 const container = document.querySelector(".container");
 
