@@ -14,7 +14,25 @@
     <button class="newButton">New Book</button>
 
     <dialog class="dialog">
-        
+        <form class="bookform">
+            <fieldset>
+                <legend>Enter book details</legend>
+                <input type="text" class="titleInput" placeholder="Title">
+                <input type="text" class="authorInput" placeholder="Author">    
+                <input type="number" class="pagesInput" placeholder="No. of Pages">  
+                <fieldset>
+                    <legend>Read?</legend>
+                    <input type="radio" class="readInputYes" id="readInputYes" name="read" value="read">
+                    <label for="readInputYes">Yes</label>
+                    <input type="radio" class="readInputNo" id="readInputNo" name="read" value="read">
+                    <label for="readInputNo">No</label>
+                </fieldset>
+                
+                <button>Submit</button>
+                <button>Close</button>
+            </fieldset>
+            
+        </form>
     </dialog>
 
     <script src="app.js"></script>
