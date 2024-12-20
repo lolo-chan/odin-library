@@ -1,4 +1,7 @@
 const myLibrary = [];
+const dialog = document.querySelector('.dialog');
+const newBookBtn = document.querySelector('.newButton');
+
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -17,7 +20,6 @@ function displayLibrary() {
         console.log(myLibrary[i].author);
     }
 }
-
 
 function createCard() {
     const newCard = document.createElement("div");
@@ -47,11 +49,11 @@ function createLibrary(myLibrary) {
         createCard();
     }
 }
+
 function createForm() {
     const bookForm = document.createElement("form");
-    const form = document.querySelector('.form');
 
-    form.appendChild(bookForm);
+    dialog.appendChild(bookForm);
 
     const titleInp = document.createElement('input');
     titleInp.setAttribute("type", "text");
@@ -77,12 +79,16 @@ function createForm() {
     readInp.setAttribute("name", "read");
     bookForm.appendChild(readInp);
 
+    const submit = document.createElement('button');
+    bookForm.appendChild(submit);
 }
 
-const newBookBtn = document.querySelector('.newButton');
 
-newBookBtn.addEventListener('click', createForm)
 
+newBookBtn.addEventListener('click', () => {
+    dialog.showModal();
+    createForm();
+})
 
 addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, "Yes");
 
