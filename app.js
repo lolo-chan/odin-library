@@ -1,7 +1,12 @@
 const myLibrary = [];
 const dialog = document.querySelector('.dialog');
 const newBookBtn = document.querySelector('.newButton');
-
+const titleInp = document.querySelector('.titleInput');
+const authorInp = document.querySelector('.authorInput');
+const pagesInp = document.querySelector('.pagesInput');
+const readInp = document.querySelector('.readInput');
+const submit = document.querySelector('.submit');
+const close = document.querySelector('.close');
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -21,7 +26,7 @@ function displayLibrary() {
     }
 }
 
-function createCard() {
+function createCard(i) {
     const newCard = document.createElement("div");
     newCard.classList.add("card");
     container.appendChild(newCard);
@@ -46,12 +51,30 @@ function createCard() {
 
 function createLibrary(myLibrary) {
     for(i=0;i<myLibrary.length;i++){
-        createCard();
+        createCard(i);
     }
 }
 
 newBookBtn.addEventListener('click', () => {
     dialog.showModal();
+})
+
+submit.addEventListener('click', (e) => {
+    e.preventDefault();
+    addBookToLibrary(titleInp.value, authorInp.value, pagesInp.value, readInp.value);
+    titleInp.value = '';
+    authorInp.value = '';
+    pagesInp.value = null;
+    dialog.close();
+    createCard(myLibrary.length-1);
+})
+
+close.addEventListener('click', (e) => {
+    e.preventDefault();
+    titleInp.value = '';
+    authorInp.value = '';
+    pagesInp.value = null;
+    dialog.close();
 })
 
 addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, "Yes");
