@@ -37,8 +37,18 @@ input {
     margin: 10px;
 }
 
-.card > button {
-    width: 20px;
-    height: 10px;
-    margin: 20px;
+.remove {
+    width: 5em;
+}
+
+.read {
+    background-color: green;
+    border-radius: 6px;
+    width: 5em;
+}
+
+.not-read {
+    background-color: red;
+    border-radius: 6px;
+    width: 5em;
 }

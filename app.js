@@ -38,7 +38,7 @@ function createCard(i) {
     const title = document.createElement("div");
     const author = document.createElement("div");
     const pages = document.createElement("div");
-    const read = document.createElement("div");
+    const read = document.createElement("button");
 
     title.classList.add("title");
 
@@ -54,6 +54,17 @@ function createCard(i) {
 
     const remove = document.createElement('button');
     newCard.appendChild(remove);
+    remove.classList.add('remove');
+    remove.textContent = "Delete";
+
+    if(myLibrary[i].read === true){
+        read.classList.add('read');
+        read.textContent = "Read";
+    }
+    else {
+        read.classList.add('not-read');
+        read.textContent = "Not Read";
+    }
 
     remove.addEventListener('click', () => {
         removeBook(i, myLibrary);
@@ -95,9 +106,9 @@ close.addEventListener('click', (e) => {
     dialog.close();
 })
 
-addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, "Yes");
+addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, true);
 
-addBookToLibrary('Homo Deus', 'Yuval Noah Harari', 786, "No");
+addBookToLibrary('Homo Deus', 'Yuval Noah Harari', 786, false);
 
 const container = document.querySelector(".container");
 
