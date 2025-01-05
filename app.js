@@ -26,6 +26,10 @@ function displayLibrary() {
     }
 }
 
+function removeBook(i, lib){
+    lib.splice(i, 1);
+}
+
 function createCard(i) {
     const newCard = document.createElement("div");
     newCard.classList.add("card");
@@ -47,6 +51,20 @@ function createCard(i) {
     author.textContent = `Author: ${myLibrary[i].author}`;
     pages.textContent = `No. of Pages: ${myLibrary[i].pages}`;
     read.textContent = `Read: ${myLibrary[i].read}`;
+
+    const remove = document.createElement('button');
+    newCard.appendChild(remove);
+
+    remove.addEventListener('click', () => {
+        removeBook(i, myLibrary);
+        container.innerHTML = '';
+        createLibrary(myLibrary);
+    })
+    
+}
+
+function clearLibrary(){
+    
 }
 
 function createLibrary(myLibrary) {
