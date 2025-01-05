@@ -52,6 +52,8 @@ function createCard(i) {
     pages.textContent = `No. of Pages: ${myLibrary[i].pages}`;
     read.textContent = `Read: ${myLibrary[i].read}`;
 
+
+
     const remove = document.createElement('button');
     newCard.appendChild(remove);
     remove.classList.add('remove');
@@ -65,6 +67,21 @@ function createCard(i) {
         read.classList.add('not-read');
         read.textContent = "Not Read";
     }
+
+    read.addEventListener('click', () => {
+        if(read.className == "read"){
+            read.classList.remove('read');
+            read.classList.add('not-read');
+            read.textContent = "Not Read";
+            myLibrary[i].read = false;
+        }
+        else {
+            read.classList.remove('not-read');
+            read.classList.add('read');
+            read.textContent = "Read";
+            myLibrary[i].read = true;
+        }
+    })
 
     remove.addEventListener('click', () => {
         removeBook(i, myLibrary);
