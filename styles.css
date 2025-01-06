@@ -1,5 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
 .container {
-    background-color: purple;
+    background-color: gainsboro;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -51,4 +57,30 @@ input {
     background-color: red;
     border-radius: 6px;
     width: 5em;
+}
+
+.header {
+    margin: 0px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 100px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 3em;
+    margin: 12px;
+    padding-left: 100px;
+}
+
+.newButton {
+    margin: 30px;
+    background-color: gainsboro;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 3em;
+    width: 6em;
+    font-size: 1em;
 }
