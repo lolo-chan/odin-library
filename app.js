@@ -50,16 +50,14 @@ function createCard(i) {
     title.textContent = myLibrary[i].title;
     author.textContent = `Author: ${myLibrary[i].author}`;
     pages.textContent = `No. of Pages: ${myLibrary[i].pages}`;
-    read.textContent = `Read: ${myLibrary[i].read}`;
-
-
+    // read.textContent = `Read: ${myLibrary[i].read}`;
 
     const remove = document.createElement('button');
     newCard.appendChild(remove);
     remove.classList.add('remove');
     remove.textContent = "Delete";
 
-    if(myLibrary[i].read === true){
+    if(myLibrary[i].read === "true"){
         read.classList.add('read');
         read.textContent = "Read";
     }
@@ -73,13 +71,13 @@ function createCard(i) {
             read.classList.remove('read');
             read.classList.add('not-read');
             read.textContent = "Not Read";
-            myLibrary[i].read = false;
+            myLibrary[i].read = "false";
         }
         else {
             read.classList.remove('not-read');
             read.classList.add('read');
             read.textContent = "Read";
-            myLibrary[i].read = true;
+            myLibrary[i].read = "true";
         }
     })
 
@@ -107,7 +105,7 @@ newBookBtn.addEventListener('click', () => {
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
-    addBookToLibrary(titleInp.value, authorInp.value, pagesInp.value, readInp.value);
+    addBookToLibrary(titleInp.value, authorInp.value, pagesInp.value, document.querySelector('input[name="read"]:checked').value);
     titleInp.value = '';
     authorInp.value = '';
     pagesInp.value = null;
@@ -123,9 +121,9 @@ close.addEventListener('click', (e) => {
     dialog.close();
 })
 
-addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, true);
+addBookToLibrary('Percy Jackson: The lightning thief', 'Rick Riordan', 264, "true");
 
-addBookToLibrary('Homo Deus', 'Yuval Noah Harari', 786, false);
+addBookToLibrary('Homo Deus', 'Yuval Noah Harari', 786, "false");
 
 const container = document.querySelector(".container");
 
