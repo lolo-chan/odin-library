@@ -2,32 +2,35 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    background-color: rgb(235, 240, 245);
 }
 
 .container {
-    background-color: gainsboro;
-    padding: 20px;
+    background-color: rgb(235, 240, 245);
+    padding: 50px;
+    padding-left: 80px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
 }
 
 .card {
-    background-color: azure;
+    background-color: white;
     border-radius: 12px;
     padding: 40px;
     text-align: center;
-    height: 40vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-size: 32px;
+    font-size: 18px;
+    border: 2px solid black;
+    font-family: 'Helvetica';
 }
 
 .title {
     font-weight: bold;
-    font-size: 48px;
 }
 
 .bookform {
@@ -44,28 +47,37 @@ input {
 }
 
 .remove {
-    width: 5em;
+    width: 7em;
+    height: 2em;
+    background-color: aliceblue;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 .read {
     background-color: green;
     border-radius: 6px;
-    width: 5em;
+    width: 7em;
+    height: 2em;
+    font-weight: bold;
 }
 
 .not-read {
     background-color: red;
     border-radius: 6px;
-    width: 5em;
+    width: 7em;
+    height: 2em;
+    font-weight: bold;
 }
 
 .header {
     margin: 0px;
-    background-color: aliceblue;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 100px;
+    font-family: 'Helvetica';
 }
 
 .logo {
